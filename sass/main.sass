@@ -1,0 +1,463 @@
+$acc: black //accent color
+
+@mixin box-shadow($shadows...) 
+  -moz-box-shadow: $shadows
+  -webkit-box-shadow: $shadows
+  box-shadow: $shadows
+
+%flex
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+@import "default"
+//header
+header
+	margin: 0
+	padding: 10px 0
+
+	.header
+		@extend %flex
+		justify-content: space-between
+		align-items: center
+		width: 92%
+		max-width: 1400px
+		margin: 0 auto 40px auto
+
+		.head_logo
+			@extend %flex
+			align-items: center
+			font-size: 27px
+
+		.head_phone_and_addres
+			@extend %flex
+			align-items: center
+			font-size: 20px
+
+			img
+				height: 25px
+				margin: 0 2px 0 20px
+				width: auto
+
+	img
+		height: 45px
+		width: auto
+
+@media (max-width: 1024px)
+	header
+		padding: 20px 0
+
+		img
+			height: 60px
+
+		.header
+			flex-direction: column
+			width: 97%
+
+	.header_logo
+		font-size: 60px
+
+@media (max-width: 530px)
+	.head_phone_and_addres
+		flex-direction: column
+
+.map_link
+	border-bottom: 1px dashed gray
+
+.map_link:hover
+	cursor: pointer
+
+img.map_link
+	border-bottom: none
+
+nav
+	@extend %flex
+	justify-content: space-between
+	height: 80px
+
+
+
+//offer
+section.offer
+	//width: 100%
+	//max-width: 100%
+	//margin: 0
+	@extend %flex
+	height: 440px
+
+	.left
+		width: 43%
+
+		img
+			height: 100%
+			width: auto
+
+	.right
+		width: 57%
+
+		h1
+			margin: 7px 0 13px 0
+
+		.va-center
+			font-size: 25px
+			@extend %flex
+			vertical-align: center
+			margin: 25px 0 0 0
+
+		span.phone
+			height: auto
+			margin: auto 0 auto 10px
+
+		img
+			height: 63px
+			width: auto
+			margin: 0 0 0 10px
+			border-radius: 50%
+			@include box-shadow(-14px 26px 70px 1px rgba(58,71,232,0.2))
+
+		button
+			font-size: 17px
+			font-family: 'Intro'
+			line-height: normal
+			display: inline-block
+			width: 247px
+			height: 63px
+			border-radius: 30px
+			background: #4A1AD6
+			background: -webkit-linear-gradient(bottom left, #4A1AD6, #448DF8)
+			background: -moz-linear-gradient(bottom left, #4A1AD6, #448DF8)
+			background: linear-gradient(bottom left, #4A1AD6, #448DF8)
+			@include box-shadow(-14px 26px 70px 1px rgba(58,71,232,0.2)) 
+			text-shadow: 0 2px rgba(0,0,0,0.22)
+			color: white
+
+@media (max-width: 1024px)
+	section.offer
+		width: 100%
+		max-width: 100%
+		margin: 0
+		align-items: center
+
+		.left
+			margin-left: -27%
+			width: 50%
+
+			img
+				width: 100%
+				height: auto
+
+		.right
+			width: 72%
+
+@media (max-width: 1400px)
+	section.offer .left img
+		width: 100%
+		height: auto
+
+@media (max-width: 420px)
+	section.offer 
+		align-items: flex-start
+
+		.right
+			width: 73%
+
+			h1
+				font-size: 30px
+				line-height: 35px
+
+			p
+				font-size: 16px
+
+@media (max-width: 408px)
+	section.offer .right p#test
+		width: 120%
+		margin: 0 0 0 -23%
+
+	section.offer .right button
+		width: 120%
+		margin: 0 0 0 -23%
+
+// center caps
+h2.caps
+	letter-spacing: 0.13em
+	text-transform: uppercase
+	text-align: center
+	width: 65%
+	margin: 0 auto
+
+@media (max-width: 1024px)
+	h2.caps
+		font-size: 20px
+		text-align: center
+		width: 93%
+
+@media (max-width: 600px)
+	h2.caps
+		font-size: 15px
+		line-height: 37px
+		text-align: center
+		width: 97%
+
+// about us
+section.about_us
+	display: grid
+	grid-template-columns: repeat(3, minmax(240px, 300px))
+	justify-content: center
+	margin: 50px auto 0 auto
+	grid-gap: 20px
+
+	.elem
+		width: auto
+		text-align: center
+		padding: 30px 
+		background: #fffafa
+		border-radius: 10px
+		@include box-shadow(0px 0px 15px 1px rgba(0,0,0,0.1)) 
+		border: 1px solid #f5f5f5
+
+		img
+			width: 100px
+			height: auto
+
+@media (max-width: 1024px)
+	section.about_us
+		grid-template-columns: 1fr
+
+		.elem
+			
+			h3
+				font-size: 21px
+
+			img
+				width: 150px
+
+//what
+.white
+.what
+	text-align: center
+
+	h3
+		margin-bottom: 20px
+
+	h4
+		margin-bottom: 5px
+		text-align: left
+
+.obj
+	display: grid
+	grid-gap: 20px
+	grid-template-columns: repeat(4, 1fr)
+
+@media (max-width: 1300px)
+	.obj
+		grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 700px)
+	.obj
+		grid-template-columns: 1fr
+
+.element
+	@extend %flex
+	align-items: center
+	height: 200px
+	background: gray
+
+	.gray
+		@extend %flex
+		width: 100%
+		height: 100%
+		text-align: center
+		background: rgba(0,0,0,0.5)
+
+		h3
+			margin: auto auto
+			color: white
+			text-decoration: uppercase
+
+.element
+	.gray:hover
+		background: rgba(0,0,0,0.2)
+
+
+#phone
+	background: url('../img/bg-phone.jpg')
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	box-shadow: -45px -45px 0px -25px rgba(71,92,234,0.4)
+
+#tv
+	background: url('../img/bg-tv.jpg')
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+#mac
+	background: url('../img/bg-mac2.jpg')
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+#ipad
+	background: url('../img/bg-ipad.jpg')	
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	box-shadow: 45px 45px 0px -25px rgba(0,0,0,0.3)
+
+@media (max-width: 1300px)
+ #phone, #ipad
+ 	box-shadow: none
+
+//delivery
+.delivery
+	display: grid
+	grid-template-columns: 4fr 5fr
+	grid-gap: 0
+	align-items: center
+	
+	.vlg 
+		text-align: center
+
+		img
+			width: 100%
+			height: auto
+
+	.text
+		text-align: right
+
+	h3
+		margin: 0 0 10px 0
+
+	p
+		margin-bottom: 30px
+
+	button
+		font-size: 17px
+		font-family: 'Intro'
+		line-height: normal
+		display: inline-block
+		width: 247px
+		height: 63px
+		border-radius: 30px
+		background: #4A1AD6
+		background: -webkit-linear-gradient(bottom left, #4A1AD6, #448DF8)
+		background: -moz-linear-gradient(bottom left, #4A1AD6, #448DF8)
+		background: linear-gradient(bottom left, #4A1AD6, #448DF8)
+		@include box-shadow(-14px 26px 70px 1px rgba(58,71,232,0.2)) 
+		text-shadow: 0 2px rgba(0,0,0,0.22)
+		color: white
+
+@media (max-width: 800px)
+	.delivery
+		grid-template-columns: 1fr
+
+		.text
+			text-align: center
+			grid-row: 2
+
+		.vlg img
+			width: 50%
+
+		button
+			width: 100%
+
+@media (max-width: 700px)
+	.delivery .vlg img
+		width: 65%
+
+@media (max-width: 600px)
+	.delivery .vlg img
+		width: 80%
+
+@media (max-width: 500px)
+	.delivery .vlg img
+		width: 100%
+// how it work
+.how
+
+//form
+section.form
+	margin-top: 50px
+
+.container-form
+	height: 500px
+	width: 80%
+	margin: 0 auto
+	padding: 35px 0 0 35px
+	box-shadow: 13px 11px 30px 0px rgba(0,0,0,0.5)
+	display: grid
+	grid-template-columns: 4fr 7fr
+	background: white
+
+	.data
+
+		h3
+		font-size: 35px
+
+		p
+			color: gray
+
+		input
+			width: 90%
+			margin-bottom: 40px
+			padding-bottom: 5px
+			border: none
+			border-bottom: 1px solid lightgray
+
+		.ver
+			height: 5px
+			width: 100px
+			margin: 20px 0 30px 0
+			background: #4A1AD6
+			background: -webkit-linear-gradient(bottom left, #4A1AD6, #448DF8)
+			background: -moz-linear-gradient(bottom left, #4A1AD6, #448DF8)
+			background: linear-gradient(bottom left, #4A1AD6, #448DF8)
+
+	.message
+		@extend %flex
+		flex-direction: column
+		justify-content: space-between
+		border-left: 1px solid lightgray
+
+		.message-text
+			padding: 20px
+
+			input
+				margin-top: 25px
+				border: none
+
+			p
+				color: gray
+
+		button
+			width: 100%
+			height: 50px
+			color: white
+			background: #4A1AD6
+			background: -webkit-linear-gradient(bottom left, #4A1AD6, #448DF8)
+			background: -moz-linear-gradient(bottom left, #4A1AD6, #448DF8)
+			background: linear-gradient(bottom left, #4A1AD6, #448DF8)
+//map
+#map
+	margin-top: 90px
+	width: 100%
+	height: 400px
+
+//footer
+footer
+	background: #3b3b3b
+
+.footer_contact
+	text-align: center
+
+	img
+		margin: 15px 10px
+		height: 40px
+		width: auto
+
+.footer_content
+	min-height: 240px
+	border-top: 1px solid gray
